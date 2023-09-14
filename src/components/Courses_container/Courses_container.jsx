@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Course_details from "../Course_details/Course_details";
 
-const Courses_container = () => {
+const Courses_container = ({handleAddToCart}) => {
     const [courses, setCourses] = useState([]);
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -13,12 +14,15 @@ const Courses_container = () => {
         fetchData();
     }, []);
 
+   
+
     return (
         <div className="col-span-2 grid grid-cols-3 gap-5">
             {courses.map((course) => (
                 <Course_details
                     key={course.id}
                     course={course}
+                    handleAddToCart={handleAddToCart}
                 ></Course_details>
             ))}
         </div>

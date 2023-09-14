@@ -1,7 +1,7 @@
 import React from "react";
 import { FaDollarSign, FaBookOpen } from "react-icons/fa6";
 
-const Course_details = ({ course }) => {
+const Course_details = ({ course, handleAddToCart }) => {
     const { course_name, course_details, image, price, time } = course;
     return (
         <div className="border p-3 rounded flex-col justify-between">
@@ -24,7 +24,7 @@ const Course_details = ({ course }) => {
                     <p>Credit : {time}hr</p>
                 </div>
             </div>
-            <button className="bg-blue-500 w-full py-2 rounded text-white text-[17px]  ">
+            <button onClick={() => handleAddToCart(course)} className="bg-blue-500 w-full py-2 rounded text-white text-[17px]  ">
                 Select
             </button>
         </div>
