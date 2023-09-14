@@ -24,7 +24,7 @@ const Course_details = ({ course, handleAddToCart }) => {
                     <p>Credit : {time}hr</p>
                 </div>
             </div>
-            <button onClick={() => handleAddToCart(course)} className="bg-blue-500 w-full py-2 rounded text-white text-[17px]  ">
+            <button onClick={() => handleAddToCart(course, time)} className="bg-blue-500 w-full py-2 rounded text-white text-[17px]  ">
                 Select
             </button>
         </div>
