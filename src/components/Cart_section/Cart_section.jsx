@@ -5,12 +5,12 @@ const Cart_section = ({ cart_items, time, totalPrice, creditRemaining }) => {
     
     return (
         <div className="text-center">
-            <h2>Credit Remaining : {creditRemaining}</h2>
+            <h2 className=" border-b-2">Credit Remaining : {creditRemaining}</h2>
             <h2 className="text-2xl">Course Name</h2>
             {cart_items.map((item) => (
                 <Cart_item_name key={item.id} item={item}></Cart_item_name>
             ))}
-            <h2>Total Credit Hours : {time}</h2>
+            <h2 className="border-b-2 border-t-2 my-4">Total Credit Hours : {time}</h2>
             <h2>Total Price : $ {totalPrice.toFixed(2)}</h2>
         </div>
     );
