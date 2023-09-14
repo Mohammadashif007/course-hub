@@ -5,15 +5,17 @@ import Cart_section from "./components/Cart_section/Cart_section";
 
 function App() {
     const [cart, setCart] = useState([]);
-    const [time, setTime] = useState(0);
+    const [totalTime, setTotalTime] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [creditRemaining, setCreditRemaining] = useState(20);
 
-    const handleAddToCart = (course, newTime) => {
-      const cartItems = [...cart, course];
-      setCart(cartItems);
-      setTime(time + newTime);
+    const handleAddToCart = (course, time, price) => {
+        const cartItems = [...cart, course];
+        setCart(cartItems);
+        setTotalTime(totalTime + time);
+        setTotalPrice(totalPrice + price);
+        setCreditRemaining(creditRemaining - time);
     };
-
-    
 
     return (
         <div className="App">
@@ -24,7 +26,12 @@ function App() {
                 <Courses_container
                     handleAddToCart={handleAddToCart}
                 ></Courses_container>
-                <Cart_section cart_items={cart} time={time}></Cart_section>
+                <Cart_section
+                    cart_items={cart}
+                    time={totalTime}
+                    totalPrice={totalPrice}
+                    creditRemaining={creditRemaining}
+                ></Cart_section>
             </div>
         </div>
     );
