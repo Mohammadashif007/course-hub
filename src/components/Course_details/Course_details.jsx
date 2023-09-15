@@ -4,7 +4,7 @@ import { FaDollarSign, FaBookOpen } from "react-icons/fa6";
 const Course_details = ({ course, handleAddToCart }) => {
     const { course_name, course_details, image, price, time } = course;
     return (
-        <div className="border p-3 rounded flex-col justify-between">
+        <div className="border p-3 rounded text-start bg-[#fff] ">
             <div>
                 <img src={image} alt="" />
                 <h2 className="text-[17px] font-bold my-2">{course_name}</h2>

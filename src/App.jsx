@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import Courses_container from "./components/Courses_container/Courses_container";
 import Cart_section from "./components/Cart_section/Cart_section";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
     const [cart, setCart] = useState([]);
@@ -10,19 +12,26 @@ function App() {
     const [creditRemaining, setCreditRemaining] = useState(20);
 
     const handleAddToCart = (course, time, price) => {
-        const cartItems = [...cart, course];
-        setCart(cartItems);
-        setTotalTime(totalTime + time);
-        setTotalPrice(totalPrice + price);
-        setCreditRemaining(creditRemaining - time);
+        if (cart.includes(course)) {
+            alert("added");
+        } else {
+            const updateCredit = creditRemaining - time;
+            if(updateCredit >= 0){
+                setCart([...cart, course]);
+                setTotalTime(totalTime + time);
+                setCreditRemaining(updateCredit);
+                setTotalPrice(totalPrice + price);
+            }
+
+        }
     };
 
     return (
-        <div className="App">
+        <div className="App bg-[#F3F3F3] p-10">
             <h1 className="text-4xl font-semibold text-center">
                 Course Registration
             </h1>
-            <div className="grid grid-cols-3 gap-3 py-8">
+            <div className="grid grid-cols-4 gap-5 py-8">
                 <Courses_container
                     handleAddToCart={handleAddToCart}
                 ></Courses_container>
