@@ -5,6 +5,8 @@ import Cart_section from "./components/Cart_section/Cart_section";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
+
 function App() {
     const [cart, setCart] = useState([]);
     const [totalTime, setTotalTime] = useState(0);
@@ -14,19 +16,26 @@ function App() {
 
     const handleAddToCart = (course, time, price, index) => {
         if (cart.includes(course)) {
-            alert('already added');
+            showTost(course);
         } else {
             const updateCredit = creditRemaining - time;
-            if(updateCredit >= 0){
+            const addedCredit = totalTime + time;
+            if (updateCredit >= 0 && addedCredit <= 20) {
                 setCart([...cart, course]);
-                setTotalTime(totalTime + time);
+                setTotalTime(addedCredit);
                 setCreditRemaining(updateCredit);
                 setTotalPrice(totalPrice + price);
                 setIndex(index + 1);
             }
-
+            else {
+                exceed(addedCredit);
+            }
+           
         }
     };
+
+    const showTost = () => toast("Item already adder");
+    const exceed = () => toast('Credit limit is exceeded!');
 
     return (
         <div className="App bg-[#F3F3F3] p-10">
@@ -45,6 +54,7 @@ function App() {
                     index={index}
                 ></Cart_section>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 }
