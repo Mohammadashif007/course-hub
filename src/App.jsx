@@ -14,7 +14,7 @@ function App() {
     const [creditRemaining, setCreditRemaining] = useState(20);
    
 
-    const handleAddToCart = (course, time, price, index) => {
+    const handleAddToCart = (course, time, price) => {
         if (cart.includes(course)) {
             showTost(course);
         } else {
