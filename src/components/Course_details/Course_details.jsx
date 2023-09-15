@@ -5,8 +5,8 @@ const Course_details = ({ course, handleAddToCart}) => {
     const { course_name, course_details, image, price, time, index } = course;
     return (
         <div className="border p-3 rounded text-start bg-[#fff] ">
-            <div>
-                <img src={image} alt="" />
+            <div className="text-center lg:text-left md:text-left">
+                <img className="w-100 mx-auto" src={image} alt="" />
                 <h2 className="text-[17px] font-bold my-2">{course_name}</h2>
                 <p>{course_details}</p>
             </div>

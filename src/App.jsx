@@ -33,7 +33,7 @@ function App() {
             <h1 className="text-4xl font-semibold text-center">
                 Course Registration
             </h1>
-            <div className="grid grid-cols-4 gap-5 py-8">
+            <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-5 py-8">
                 <Courses_container
                     handleAddToCart={handleAddToCart}
                 ></Courses_container>

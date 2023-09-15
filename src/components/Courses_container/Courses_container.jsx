@@ -17,7 +17,7 @@ const Courses_container = ({handleAddToCart}) => {
    
 
     return (
-        <div className="col-span-3 grid grid-cols-3 gap-5">
+        <div className="col-span-3 grid lg:grid-cols-3 md:grid-cols-2 gap-5">
             {courses.map((course) => (
                 <Course_details
                     key={course.id}

@@ -4,7 +4,7 @@ import Cart_item_name from "../Cart_item_name/Cart_item_name";
 const Cart_item = ({ cart_items, time, totalPrice, creditRemaining}) => {
     return (
         <div className="bg-white px-8 py-2 rounded">
-            <h2 className=" border-b-2">
+            <h2 className=" border-b-2 pb-3 pt-2">
                 Credit Hour Remaining : {creditRemaining}
             </h2>
             <h2 className="text-[18px] font-bold pt-3">Course Name</h2>
