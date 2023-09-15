@@ -1,8 +1,8 @@
 import React from "react";
 import { FaDollarSign, FaBookOpen } from "react-icons/fa6";
 
-const Course_details = ({ course, handleAddToCart }) => {
-    const { course_name, course_details, image, price, time } = course;
+const Course_details = ({ course, handleAddToCart}) => {
+    const { course_name, course_details, image, price, time, index } = course;
     return (
         <div className="border p-3 rounded text-start bg-[#fff] ">
             <div>

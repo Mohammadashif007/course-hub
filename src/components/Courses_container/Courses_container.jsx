@@ -23,6 +23,7 @@ const Courses_container = ({handleAddToCart}) => {
                     key={course.id}
                     course={course}
                     handleAddToCart={handleAddToCart}
+                  
                 ></Course_details>
             ))}
         </div>

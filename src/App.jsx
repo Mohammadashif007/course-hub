@@ -10,10 +10,11 @@ function App() {
     const [totalTime, setTotalTime] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
     const [creditRemaining, setCreditRemaining] = useState(20);
+    const [index, setIndex] = useState(0);
 
-    const handleAddToCart = (course, time, price) => {
+    const handleAddToCart = (course, time, price, index) => {
         if (cart.includes(course)) {
-            alert("added");
+            alert('already added');
         } else {
             const updateCredit = creditRemaining - time;
             if(updateCredit >= 0){
@@ -21,6 +22,7 @@ function App() {
                 setTotalTime(totalTime + time);
                 setCreditRemaining(updateCredit);
                 setTotalPrice(totalPrice + price);
+                setIndex(index + 1);
             }
 
         }
@@ -40,6 +42,7 @@ function App() {
                     time={totalTime}
                     totalPrice={totalPrice}
                     creditRemaining={creditRemaining}
+                    index={index}
                 ></Cart_section>
             </div>
         </div>

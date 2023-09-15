@@ -1,8 +1,7 @@
 import React from "react";
-import Cart_item_name from "../Cart_item_name/Cart_item_name";
 import Cart_item from "../Cart_item/Cart_item";
 
-const Cart_section = ({ cart_items, time, totalPrice, creditRemaining }) => {
+const Cart_section = ({ cart_items, time, totalPrice, creditRemaining, index }) => {
     
     return (
         <div className="">
@@ -11,6 +10,7 @@ const Cart_section = ({ cart_items, time, totalPrice, creditRemaining }) => {
             time={time}
             totalPrice={totalPrice}
             creditRemaining={creditRemaining}
+            index={index}
             ></Cart_item>
         </div>
     );
