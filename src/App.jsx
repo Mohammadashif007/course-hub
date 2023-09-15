@@ -12,7 +12,7 @@ function App() {
     const [totalTime, setTotalTime] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
     const [creditRemaining, setCreditRemaining] = useState(20);
-    const [index, setIndex] = useState(0);
+   
 
     const handleAddToCart = (course, time, price, index) => {
         if (cart.includes(course)) {
@@ -25,7 +25,7 @@ function App() {
                 setTotalTime(addedCredit);
                 setCreditRemaining(updateCredit);
                 setTotalPrice(totalPrice + price);
-                setIndex(index + 1);
+                
             }
             else {
                 exceed(addedCredit);
@@ -51,7 +51,7 @@ function App() {
                     time={totalTime}
                     totalPrice={totalPrice}
                     creditRemaining={creditRemaining}
-                    index={index}
+                    
                 ></Cart_section>
             </div>
             <ToastContainer></ToastContainer>
