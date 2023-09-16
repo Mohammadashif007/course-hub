@@ -35,7 +35,7 @@ function App() {
     };
 
     const showTost = () => toast("Item already added.");
-    const exceed = () => toast('Credit limit is exceeded!');
+    const exceed = () => toast('Credit limit is exceeded!!');
 
     return (
         <div className="App bg-[#F3F3F3] p-10">
