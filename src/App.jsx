@@ -34,7 +34,7 @@ function App() {
         }
     };
 
-    const showTost = () => toast("Item already adder");
+    const showTost = () => toast("Item already added.");
     const exceed = () => toast('Credit limit is exceeded!');
 
     return (
